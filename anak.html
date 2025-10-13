@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kisah Rafi Anak Pemberani (Premium White)</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8W3iwQ/zQo/I+wXyVw7dM4W44O2M11F5+B6zB6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&family=Cormorant+Garamond:ital,wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           ✨ SKEMA WARNA ULTRA PREMIUM (White & Pink Aksen) ✨
+           ========================================= */
+        :root {
+            /* Warna Dasar: Putih Bersih & Hitam Pekat */
+            --bg-primary: #ffffff; /* Latar Belakang Putih Absolut */
+            --text-dark: #000000; /* Teks Hitam Pekat */
+            --text-light: #444444; /* Teks Abu-abu Tua untuk Kontras */
+
+            /* Aksen Pink Premium (Rose Gold / Dusty Rose) */
+            --accent-pink: #f06292; /* Soft yet defined Pink/Rose */
+            --accent-light: #fff8f9; /* Lightest Pink/Shadow Base */
+
+            /* Bayangan Canggih (Sangat tipis, fokus pada kedalaman) */
+            --shadow-subtle: 0 5px 20px rgba(0, 0, 0, 0.04); 
+            --shadow-button: 0 8px 18px rgba(240, 98, 146, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; /* Clean, modern, high-end look */
+            background-color: var(--bg-primary); 
+            color: var(--text-dark);
+            line-height: 1.7; /* Meningkatkan keterbacaan (Luxury feel) */
+            letter-spacing: 0.01em;
+            transition: background-color 0.5s ease;
+        }
+        
+        /* Font untuk Judul Utama (Classic Serif Elegan) */
+        .story-title {
+            font-family: 'Playfair Display', serif; /* Font dengan gaya tinggi */
+            font-weight: 700;
+            letter-spacing: 0.08em; /* Jarak huruf lebih renggang (Luxury) */
+            color: var(--text-dark);
+        }
+
+        /* Judul Bab */
+        .chapter-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* --- Navbar (Minimalis & Fixed) --- */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--accent-light);
+            transition: box-shadow 0.3s ease;
+        }
+        nav.scrolled {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06); 
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--accent-pink);
+            border-bottom: 2px solid var(--accent-pink);
+        }
+
+        /* --- Section Chapter --- */
+        .story-chapter {
+            min-height: 100vh;
+            padding: 8rem 1.5rem;
+            position: relative;
+        }
+        .chapter-separator {
+            width: 60px; 
+            height: 2px;
+            background-color: var(--accent-pink);
+            margin: 1.5rem auto;
+            border-radius: 9999px;
+            opacity: 0.7;
+        }
+
+        /* --- Tombol Utama (Solid Pink, High Contrast) --- */
+        .btn-primary {
+            background-color: var(--accent-pink);
+            box-shadow: var(--shadow-button);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: white; 
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #e54d7e; 
+            box-shadow: 0 10px 20px rgba(240, 98, 146, 0.4);
+        }
+
+        /* --- Dialog Box Baru (Minimalis Quoted Text) --- */
+        .dialog-box {
+            background-color: var(--bg-primary); 
+            border-left: 3px solid var(--accent-pink); 
+            border-radius: 0; 
+            padding: 1rem 1.25rem;
+            box-shadow: none; 
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-light);
+            font-family: 'Cormorant Garamond', serif; 
+        }
+        .dialog-box p {
+            font-size: 1.2rem; 
+            line-height: 1.5;
+        }
+        .dialog-box strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* Dialog Rafi (Kesan Highlight) */
+        .dialog-box.rafly-quote {
+            background-color: var(--accent-light);
+            border-left: 3px solid var(--text-dark);
+            color: var(--text-dark);
+            font-style: normal;
+            font-weight: 600;
+            text-align: left; /* Biar tetap profesional, jangan terlalu banyak yang rata tengah */
+            padding: 1.5rem;
+        }
+
+        /* --- Image Container (Clean & Framed) --- */
+        .image-container {
+            width: 100%;
+            padding-bottom: 100%; 
+            position: relative;
+            background-color: #ffffff;
+            border: 1px solid #eeeeee; 
+            border-radius: 0;
+            box-shadow: var(--shadow-subtle); 
+            transition: all 0.4s ease-in-out;
+            overflow: hidden;
+        }
+        .image-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+        .image-container:hover img {
+            transform: scale(1.03);
+        }
+        .icon-overlay {
+            color: var(--accent-pink); 
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+            opacity: 0.8;
+        }
+
+        /* --- Info Card (Clean & Modern) --- */
+        .info-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--accent-light);
+            box-shadow: var(--shadow-subtle); 
+            border-radius: 0.25rem; 
+            transition: all 0.4s ease;
+            height: 100%; /* Penting untuk grid items yang sama tinggi */
+        }
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+            border-color: var(--accent-pink);
+        }
+
+        /* --- Epilog (TAMAT) --- */
+        .epilog-section {
+            background-color: var(--accent-light);
+            border-top: 5px solid var(--accent-pink);
+            padding: 5rem 1.5rem;
+        }
+        .epilog-title {
+            color: var(--accent-pink); 
+            font-size: 5rem;
+            letter-spacing: 0.1em;
+        }
+        .btn-epilog {
+            background-color: var(--accent-pink);
+            color: white; 
+            box-shadow: var(--shadow-button);
+        }
+        
+    </style>
+</head>
+
+<body>
+   
+    <nav id="navbar" class="py-4 md:py-5 px-6 md:px-12 flex justify-between items-center fixed top-0 w-full z-50">
+        <div class="text-[var(--text-dark)] story-title font-bold text-xl md:text-2xl tracking-normal">
+            <span class="text-[var(--accent-pink)]">Kisah</span> Rafi
+        </div>
+        <div class="space-x-10 text-sm md:text-base hidden md:flex font-medium">
+            <a href="#intro" class="nav-link">Home</a>
+            <a href="#chapter1" class="nav-link">Chapter I</a>
+            <a href="#chapter2" class="nav-link">Chapter II</a>
+            <a href="#chapter3" class="nav-link">Chapter III</a>
+            <a href="#chapter4" class="nav-link">Chapter IV</a>
+            <a href="#epilog" class="nav-link">Epilog</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-[var(--text-dark)] text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 w-full h-full bg-white z-40 p-6 shadow-2xl md:hidden" style="transform: translateX(100%); transition: transform 0.4s ease-out;">
+        <div class="flex justify-end mb-12">
+            <button id="close-mobile-menu-btn" class="text-3xl text-[var(--text-dark)]">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-8 text-xl font-semibold">
+            <a href="#intro" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Home</a>
+            <a href="#chapter1" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Bab I</a>
+            <a href="#chapter2" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Bab II</a>
+            <a href="#chapter3" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Bab III</a>
+            <a href="#chapter4" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Bab IV</a>
+            <a href="#epilog" class="nav-link">Epilog</a>
+        </div>
+    </div>
+
+
+    <section id="intro" class="story-chapter pt-36 pb-20">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16">
+            
+            <div class="flex-1 text-center md:text-left order-2 md:order-1">
+                <p class="text-xs font-semibold text-[var(--accent-pink)] uppercase tracking-[0.2em] mb-4" data-aos="fade-up" data-aos-delay="300">
+                    Dongeng Edukasi Eksklusif
+                </p>
+                <h1 class="text-6xl lg:text-8xl story-title leading-none"
+                    data-aos="fade-right" data-aos-duration="1500">
+                    Anak <span class="italic text-[var(--accent-pink)]">Pemberani</span> & Kekuatan Darah
+                </h1>
+                <p class="mt-8 text-xl text-[var(--text-light)] font-light tracking-wide max-w-xl" data-aos="fade-up" data-aos-delay="500">
+                    Kisah inspiratif tentang Rafi, Anak Pemberani yang belajar memahami Thalasemia. Sebuah panduan visual untuk kesehatan dan semangat yang tak terbatas.
+                </p>
+                <div class="chapter-separator mx-0 md:mx-auto mt-8 mb-12" data-aos="fade-right" data-aos-delay="700"></div>
+
+                <a href="#chapter1" id="startAdventure" 
+                    class="inline-block px-10 py-3 btn-primary text-sm uppercase tracking-[0.1em] rounded-sm transition transform"
+                    data-aos="fade-up" data-aos-delay="900">
+                    Mulai Baca Kisah <i class="fas fa-arrow-down ml-3"></i>
+                </a>
+
+                <audio id="bgMusic" loop>
+                    <source src="backsound1.mp3" type="audio/mp3">
+                </audio>
+
+                <script>
+                    document.getElementById("startAdventure").addEventListener("click", function () {
+                        const bgMusic = document.getElementById("bgMusic");
+                        bgMusic.play().catch(err => console.log("Autoplay gagal:", err));
+                    });
+                </script>
+            </div>
+
+            <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="image-container max-w-sm">
+                    <img src="pict5.png" alt="Ilustrasi Anak Pemberani" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chapter1" class="story-chapter bg-[var(--accent-light)]/70 shadow-inner">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-xl font-medium tracking-[0.1em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
+                Chapter I
+            </h2>
+            <h3 class="text-5xl md:text-6xl chapter-heading mb-10" data-aos="fade-down" data-aos-delay="200">
+                Mengenal Thalasemia
+            </h3>
+            <div class="chapter-separator" data-aos="fade-down" data-aos-delay="400"></div>
+
+            <div class="grid md:grid-cols-2 gap-20 mt-16 items-start">
+                
+                <div class="text-left" data-aos="fade-right" data-aos-delay="500">
+                    <p class="mt-4 text-[var(--text-light)] text-lg">
+                        Pada suatu pagi, Rafi ingin bermain bola bersama teman-temannya. Namun, baru beberapa menit berlari, ia sudah merasa lelah. Perasaan tersebut membuatnya bertanya-tanya.
+                    </p>
+                    
+                    <div class="dialog-box" data-aos="fade-right" data-aos-delay="700">
+                        <p>
+                          Rafi bertanya, “Bu, mengapa aku cepat lelah, ya?”<br>
+                          Ibu menjawab, “Nak, mungkin kita perlu pergi ke dokter. Penting untuk mengetahui penyebab kamu cepat lelah.
+                        </p>
+                    </div>
+                
+                    <p class="mt-4 text-[var(--text-light)] text-lg">
+                        Di rumah sakit, Dokter Nia menjelaskan kondisi Rafi.
+                    </p>
+
+                    <div class="dialog-box" data-aos="fade-right" data-aos-delay="900">
+                        <p>
+                          “Rafi, di dalam tubuh kita ada darah yang bekerja keras membawa oksigen, supaya tubuh kita bisa bergerak dan bermain,” katanya. “Kadang, sel darahmu sedikit lebih lemah,” lanjut Dokter Nia. “Kondisi itu disebut talasemia. Tapi jangan khawatir, Rafi. Dengan perawatan yang tepat, kamu tetap bisa tumbuh sehat dan penuh semangat seperti anak-anak lainnya.”
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="text-left" data-aos="fade-left" data-aos-delay="500">
+                    <div class="image-container mb-10 max-w-sm mx-auto">
+                        <img src="pict4.png" alt="Ilustrasi Pemeriksaan Dokter">
+                        <i class="fas fa-user-doctor icon-overlay text-4xl absolute top-4 right-4"></i>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chapter2" class="story-chapter">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-xl font-medium tracking-[0.1em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
+                Chapter II
+            </h2>
+            <h3 class="text-5xl md:text-6xl chapter-heading mb-10" data-aos="fade-down" data-aos-delay="200">
+                Memahami Anemia
+            </h3>
+            <div class="chapter-separator" data-aos="fade-down" data-aos-delay="400"></div>
+
+            <div class="grid md:grid-cols-2 gap-12 mt-16 items-start">
+                
+                <div class="info-card p-6 md:p-8 text-left" data-aos="flip-up" data-aos-delay="500">
+                    <div class="image-container mb-6 mx-auto max-w-xs">
+                        <img src="pict2.png" alt="Ilustrasi Transfusi Darah">
+                        <i class="fas fa-droplet icon-overlay text-4xl absolute bottom-4 right-4"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl story-title mb-4 text-center">Definisi Medis</h3>
+                    <p class="text-[var(--text-light)] text-lg">
+                        <span class="font-bold text-[var(--accent-pink)]">Dokter Nia:</span> "Darah itu ibarat mobil pengantar oksigen. Jika jumlahnya kurang, tubuh lesu—itulah Anemia."
+                    </p>
+                    <div class="dialog-box rafly-quote mt-4">
+                        <p class="text-xl">
+                          Dokter Nia tersenyum hangat. “Betul sekali, Rafi. Kalau kamu makan makanan bergizi, cukup istirahat, dan rajin berobat, berarti kamu sedang membantu darahmu agar tetap kuat.”
+
+                        </p>
+                    </div>
+            
+                </div>
+                
+                <div class="info-card p-6 md:p-8 text-left" data-aos="flip-up" data-aos-delay="700">
+                    <div class="image-container mb-6 mx-auto max-w-xs">
+                        <img src="pict6.png" alt="Ilustrasi Perawatan">
+                        <i class="fas fa-hand-holding-heart icon-overlay text-4xl absolute bottom-4 right-4"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl story-title mb-4 text-center">Komitmen Rafi</h3>
+                    <div class="dialog-box rafly-quote mt-4">
+                        <p class="text-xl">
+                           Rafi menatap Dokter Nia dengan mata berbinar. “Jadi, aku harus menjadi teman yang baik untuk darahku, ya, Dok?” tanyanya penuh semangat.
+
+                        </p>
+                    </div>
+                    <p class="text-[var(--text-light)] mt-4 text-center text-lg italic">
+                       Rafi mengangguk pelan. Dalam hatinya, ia membayangkan sel-sel darah kecil di tubuhnya sedang bekerja keras seperti prajurit pemberani. Sejak hari itu, Rafi berjanji akan menjadi sahabat terbaik bagi darahnya — menjaga tubuhnya dengan penuh kasih dan semangat setiap hari.
+                    </p>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chapter3" class="story-chapter bg-[var(--accent-light)]/70 shadow-inner">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-xl font-medium tracking-[0.1em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
+                Chapter III
+            </h2>
+            <h3 class="text-5xl md:text-6xl chapter-heading mb-10" data-aos="fade-down" data-aos-delay="200">
+                Observasi Dini
+            </h3>
+            <div class="chapter-separator" data-aos="fade-down" data-aos-delay="400"></div>
+
+            <div class="grid md:grid-cols-3 gap-12 mt-16 items-center">
+                <div class="md:col-span-1 flex justify-center order-1 md:order-1" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="image-container max-w-xs">
+                        <img src="pict3.png" alt="Ilustrasi Dukungan Keluarga">
+                        <i class="fas fa-family icon-overlay text-4xl absolute bottom-4 right-4"></i>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 text-left order-2 md:order-2" data-aos="fade-left" data-aos-delay="700">
+                    <p class="mt-6 text-xl text-[var(--text-light)] font-light">
+                        Rafi mulai peka terhadap tubuhnya. Ia menyadari kulitnya yang tampak pucat dan bibirnya yang kebiruan—tanda bahwa tubuhnya membutuhkan darah baru.
+                    </p>
+                    <div class="dialog-box" data-aos="fade-left" data-aos-delay="900">
+                        <p>
+                            **Ibu:** "Nak, itu tandanya kamu butuh bantuan dari dokter lagi. Jangan khawatir."<br>
+                            **Rafi:** "Aku mau kuat seperti darah yang berani, Bu!"
+                        </p>
+                    </div>
+                    <p class="mt-6 text-2xl font-bold text-[var(--text-dark)] italic story-title" data-aos="fade-left" data-aos-delay="1100">
+                        Dukungan keluarga adalah kekuatan utama bagi Rafi untuk terus berjuang, mengamati tanda-tanda kecil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chapter4" class="story-chapter">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-xl font-medium tracking-[0.1em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
+                Chapter IV
+            </h2>
+            <h3 class="text-5xl md:text-6xl chapter-heading mb-10" data-aos="fade-down" data-aos-delay="200">
+                Komitmen Berobat
+            </h3>
+            <div class="chapter-separator" data-aos="fade-down" data-aos-delay="400"></div>
+
+            <div class="grid md:grid-cols-2 gap-20 mt-16 items-start">
+                <div class="text-left order-2 md:order-1" data-aos="fade-right" data-aos-delay="500">
+                    <p class="mt-4 text-[var(--text-light)] text-lg">
+                        Saat di rumah sakit, Rafi melihat anak-anak lain berobat dengan senyum. Ia sadar, dia tidak sendirian.
+                    </p>
+                    
+                    <div class="dialog-box" data-aos="fade-right" data-aos-delay="700">
+                        <p>
+                            **Dokter Nia:** "Setiap berobat, kamu semakin kuat. Jangan takut, ini adalah bagian dari perjalananmu menjadi pahlawan kecil."
+                        </p>
+                    </div>
+
+                    <p class="mt-4 text-[var(--text-light)] text-lg">
+                        Setelah transfusi darah, Rafi merasa lonjakan energi. Ia berlari kecil ke ibunya.
+                    </p>
+                    
+                    <div class="dialog-box rafly-quote" data-aos="fade-right" data-aos-delay="900">
+                        <p class="text-xl">
+                            **Rafi:** "Bu! Aku tidak capek lagi! Aku mau terus kuat!"
+                        </p>
+                    </div>
+                    
+                    <p class="mt-4 text-[var(--text-dark)] text-lg font-semibold">
+                        Rafi memegang janji untuk selalu berani berobat dan menjaga tubuhnya.
+                    </p>
+                </div>
+                <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="image-container max-w-sm">
+                        <img src="pict8.png" alt="Ilustrasi Anak Bersemangat">
+                        <i class="fas fa-star-of-life icon-overlay text-4xl absolute top-4 right-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="epilog" class="epilog-section text-center">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
+
+            <h2 class="epilog-title story-title font-extrabold mb-4 leading-none" data-aos="zoom-in" data-aos-delay="200">
+                TAMAT.
+            </h2>
+            
+            <p class="text-3xl font-bold story-title italic mb-8" data-aos="fade-up" data-aos-delay="400">
+                "Berani berobat, berarti berani sehat"
+            </p>
+
+            <p class="text-xl md:text-2xl font-light text-[var(--text-dark)]/90 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="600">
+                Kisah Rafi kini menjadi pengingat pentingnya kepedulian pada kesehatan diri sejak dini. Kekuatan sejati datang dari keberanian untuk merawat diri.
+            </p>
+
+            <div class="mt-12" data-aos="zoom-in" data-aos-delay="800">
+                <a href="#intro" class="inline-block px-12 py-3 btn-epilog text-sm uppercase tracking-[0.1em] font-extrabold rounded-sm transition transform">
+                    <i class="fas fa-arrow-up mr-3"></i> Kembali ke Awal
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-white text-[var(--text-dark)] p-6 md:p-8 text-center border-t border-[var(--accent-light)]" >
+        <p class="font-light text-sm md:text-base">
+            © 2025 Kisah Rafi | Desain Ultra-Premium | <span class="text-[var(--accent-pink)] font-semibold">#KeberanianSejati</span>
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        once: true, 
+        offset: 150, 
+        duration: 1000, 
+        delay: 50, 
+        easing: 'ease-out-quad', 
+    });
+    
+    // Smooth Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        mobileMenu.style.transform = 'translateX(0)';
+    });
+    document.getElementById('close-mobile-menu-btn').addEventListener('click', () => {
+        mobileMenu.style.transform = 'translateX(100%)';
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(100%)';
+        });
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    </script>
+    
+</body>
+</html>
