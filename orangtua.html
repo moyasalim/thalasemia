@@ -13,8 +13,8 @@
 
     <style>
         /* =========================================
-           ✨ SKEMA WARNA ULTRA PREMIUM (White & Pink Aksen) ✨
-           ========================================= */
+            ✨ SKEMA WARNA ULTRA PREMIUM (White & Pink Aksen) ✨
+            ========================================= */
         :root {
             /* Warna Dasar: Putih Bersih & Hitam Pekat */
             --bg-primary: #ffffff; 
@@ -29,6 +29,7 @@
             /* Bayangan Canggih (Tipis, fokus pada kedalaman) */
             --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.05); 
             --shadow-button: 0 6px 15px rgba(216, 27, 96, 0.3);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.08); /* Bayangan untuk card yang lebih menonjol */
         }
 
         body {
@@ -41,7 +42,7 @@
         /* Font untuk Judul Utama (Modern Serif) */
         .page-title {
             font-family: 'Playfair Display', serif; 
-            font-weight: 800; /* Lebih tebal */
+            font-weight: 800;
             letter-spacing: 0.05em; 
             color: var(--text-dark);
         }
@@ -65,7 +66,7 @@
         .nav-link {
             font-weight: 500;
             color: var(--text-dark);
-            border-bottom: 2px solid transparent; /* default */
+            border-bottom: 2px solid transparent; 
         }
         .nav-link:hover {
             color: var(--accent-pink);
@@ -74,11 +75,16 @@
 
         /* --- Section Content --- */
         .main-section {
-            padding: 7rem 1.5rem; /* Lebih ringkas */
+            padding: 5rem 1rem; /* Lebih ringkas untuk mobile */
+        }
+        @media (min-width: 768px) {
+            .main-section {
+                padding: 7rem 1.5rem;
+            }
         }
         .separator {
-            width: 80px; /* Lebih lebar */
-            height: 3px; /* Lebih tebal */
+            width: 80px; 
+            height: 3px; 
             background-color: var(--accent-pink);
             margin: 1rem auto 2.5rem;
             border-radius: 9999px;
@@ -92,7 +98,7 @@
             font-weight: 700;
             letter-spacing: 0.1em;
             color: white; 
-            border-radius: 0.375rem; /* rounded */
+            border-radius: 0.5rem; 
         }
         .btn-primary:hover {
             transform: translateY(-1px);
@@ -103,16 +109,21 @@
         .key-highlight-box {
             background-color: var(--accent-light); 
             border-radius: 0.75rem; 
-            padding: 2.5rem;
-            margin: 2.5rem 0;
-            border: 1px solid var(--accent-pink);
-            box-shadow: var(--shadow-subtle);
+            padding: 2rem 1.5rem; /* Lebih kecil untuk mobile */
+            margin: 2rem 0;
+            border: 2px solid var(--accent-pink);
+            box-shadow: var(--shadow-card);
         }
         .key-highlight-box p {
-            font-size: 1.4rem; 
+            font-size: 1.1rem; /* Dikecilkan untuk mobile */
             line-height: 1.6;
             font-weight: 600;
             color: var(--text-dark);
+        }
+        @media (min-width: 768px) {
+             .key-highlight-box p {
+                font-size: 1.4rem;
+            }
         }
 
         /* --- Info Card (Fakta Kunci) --- */
@@ -121,12 +132,12 @@
             border: 1px solid #f0f0f0; 
             box-shadow: var(--shadow-subtle); 
             border-radius: 0.5rem; 
-            padding: 2rem;
+            padding: 1.5rem; /* Dikecilkan untuk mobile */
             height: 100%;
             transition: all 0.4s ease;
         }
         .info-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+            box-shadow: var(--shadow-card); 
             border-color: var(--accent-pink);
         }
         .info-card h4 {
@@ -135,10 +146,10 @@
             margin-bottom: 0.75rem;
         }
 
-        /* --- Image Placeholder (Gaya Minimalis) --- */
+        /* --- Image Placeholder (Rasio 1:1) --- */
         .image-placeholder {
             width: 100%;
-            padding-top: 75%; /* Rasio 4:3 */
+            padding-top: 100%; /* Rasio 1:1 */
             position: relative;
             background-color: var(--accent-light);
             border: 4px solid var(--accent-pink);
@@ -150,15 +161,70 @@
         }
         .image-placeholder-icon {
             position: absolute;
-            font-size: 5rem;
+            font-size: 4rem; /* Dikecilkan untuk mobile */
             color: var(--accent-pink);
             opacity: 0.6;
+        }
+        @media (min-width: 768px) {
+            .image-placeholder-icon {
+                font-size: 5rem;
+            }
         }
         .section-icon {
             color: var(--accent-pink); 
             filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
             opacity: 0.9;
         }
+        
+        /* Ikon & List Framework Baru */
+        .pro-list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem; /* Lebih rapat untuk mobile */
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--accent-light);
+            transition: background-color 0.3s ease;
+        }
+        .pro-list-item:last-child {
+             border-bottom: none;
+        }
+        .pro-list-item:hover {
+             background-color: var(--accent-light);
+        }
+        .pro-list-icon {
+            font-size: 1.25rem; /* Dikecilkan sedikit */
+            color: var(--accent-pink);
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+            padding-top: 0.1rem;
+        }
+        .pro-list-text strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .pro-list-text p {
+            font-size: 0.95rem; /* Dikecilkan untuk mobile */
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        /* Poin Transfusi/Kelasi Besi */
+        .treatment-point {
+            background-color: var(--bg-primary); 
+            border: 1px solid var(--accent-light);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-subtle);
+            margin-top: 0.5rem;
+        }
+        .treatment-point-header {
+            font-weight: 700;
+            color: var(--accent-pink);
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
     </style>
 </head>
 
@@ -168,6 +234,9 @@
         <div class="text-[var(--text-dark)] page-title font-bold text-xl md:text-2xl tracking-normal">
             <i class="fas fa-heartbeat text-[var(--accent-pink)] mr-2"></i> Edukasi <span class="text-[var(--accent-pink)]">Thalasemia</span>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-[var(--text-dark)] text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="space-x-10 text-sm md:text-base hidden md:flex font-medium">
             <a href="#intro" class="nav-link">Home</a>
             <a href="#section1" class="nav-link">Pencegahan Genetik</a>
@@ -175,18 +244,15 @@
             <a href="#section3" class="nav-link">Protokol Perawatan</a>
             <a href="#section4" class="nav-link">Dukungan Holistik</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-[var(--text-dark)] text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
     </nav>
 
     <div id="mobile-menu" class="fixed top-0 right-0 w-full h-full bg-white z-40 p-6 shadow-2xl md:hidden" style="transform: translateX(100%); transition: transform 0.4s ease-out;">
-        <div class="flex justify-end mb-12">
+        <div class="flex justify-end mb-10">
             <button id="close-mobile-menu-btn" class="text-3xl text-[var(--text-dark)]">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div class="flex flex-col space-y-8 text-xl font-semibold">
+        <div class="flex flex-col space-y-6 text-xl font-semibold">
             <a href="#intro" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Home</a>
             <a href="#section1" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Pencegahan Genetik</a>
             <a href="#section2" class="nav-link border-b-2 pb-2 border-[var(--accent-light)] hover:border-[var(--accent-pink)]">Deteksi Klinis</a>
@@ -196,32 +262,32 @@
     </div>
 
 
-    <section id="intro" class="main-section pt-40 pb-20">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-20">
+    <section id="intro" class="main-section pt-32 md:pt-40 pb-10 md:pb-20">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10 md:gap-20">
             
             <div class="flex-1 text-center md:text-left order-2 md:order-1">
-                <p class="text-sm font-semibold text-[var(--accent-pink)] uppercase tracking-[0.2em] mb-4" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-xs md:text-sm font-semibold text-[var(--accent-pink)] uppercase tracking-[0.2em] mb-4" data-aos="fade-up" data-aos-delay="300">
                     PUSAT SUMBER DAYA MEDIS & KELUARGA
                 </p>
-                <h1 class="text-7xl lg:text-8xl page-title leading-tight"
+                <h1 class="text-5xl lg:text-7xl page-title leading-tight"
                     data-aos="fade-right" data-aos-duration="1500">
-                    Mengelola <span class="italic text-[var(--accent-pink)]">Thalasemia</span> dengan Penuh Pengetahuan
+                    Mengelola <span class="italic text-[var(--accent-pink)]">Thalasemia</span> dengan Pengetahuan
                 </h1>
-                <p class="mt-8 text-xl text-[var(--text-light)] font-light tracking-wide max-w-xl" data-aos="fade-up" data-aos-delay="500">
+                <p class="mt-6 md:mt-8 text-base md:text-xl text-[var(--text-light)] font-light tracking-wide max-w-xl" data-aos="fade-up" data-aos-delay="500">
                     Kami menyediakan panduan profesional yang komprehensif bagi orang tua dalam pencegahan, diagnosis, dan pemeliharaan kualitas hidup anak penyandang Thalasemia.
                 </p>
                 
                 <a href="#section1" 
-                    class="inline-block px-12 py-3 mt-10 btn-primary text-sm uppercase tracking-[0.1em] rounded-md transition transform"
+                    class="inline-block px-8 md:px-12 py-3 mt-8 md:mt-10 btn-primary text-sm uppercase tracking-[0.1em] rounded-md transition transform"
                     data-aos="fade-up" data-aos-delay="900">
-                    Lihat Peta Jalan Edukasi <i class="fas fa-arrow-down ml-3"></i>
+                    Jelajahi Peta Jalan Edukasi <i class="fas fa-arrow-down ml-3"></i>
                 </a>
             </div>
 
             <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1200">
-                <div class="image-placeholder max-w-lg shadow-xl" style="padding-top: 100%;">
+                <div class="image-placeholder max-w-xs md:max-w-lg shadow-xl" style="padding-top: 100%;">
                     <i class="fas fa-dna image-placeholder-icon"></i>
-                    <p class="absolute text-2xl font-semibold z-10 text-[var(--text-dark)]/90 mt-20">Skrining Genetik</p>
+                    <p class="absolute text-xl md:text-2xl font-semibold z-10 text-[var(--text-dark)]/90 mt-20">Skrining Genetik</p>
                 </div>
             </div>
         </div>
@@ -232,40 +298,41 @@
             <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
                 Langkah Awal
             </h2>
-            <h3 class="text-4xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
+            <h3 class="text-3xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
                 Pencegahan Thalasemia: Skrining Pra-Konsepsi
             </h3>
             <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
 
             <div class="key-highlight-box max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-delay="600">
                 <p>
-                    <i class="fas fa-user-shield text-[var(--accent-pink)] mr-3"></i> **Fokus utama pencegahan Thalasemia Mayor adalah pada skrining pasangan untuk mengidentifikasi pembawa sifat (Thalasemia Minor).**
+                    <i class="fas fa-user-shield text-[var(--accent-pink)] mr-3"></i> 
+                    <span class="font-bold">Fokus utama dalam pencegahan Thalasemia Mayor adalah melakukan pemeriksaan atau skrining pada pasangan sebelum menikah,</span> untuk mengetahui apakah salah satu atau keduanya membawa sifat Thalasemia (Thalasemia Minor).
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-16">
                 
                 <div class="info-card text-center" data-aos="flip-up" data-aos-delay="700">
-                    <i class="fas fa-vial section-icon text-3xl mb-4"></i>
+                    <i class="fas fa-vial section-icon text-4xl mb-3"></i>
                     <h4 class="text-xl">Tes Darah Wajib</h4>
-                    <p class="text-[var(--text-light)] text-base">
-                        Setiap pasangan yang berencana memiliki anak disarankan menjalani tes Hemoglobin (Hb) elektroforesis. Ini adalah tes definitif untuk carrier.
+                    <p class="text-[var(--text-light)] text-sm md:text-base">
+                        Setiap pasangan yang berencana memiliki anak disarankan untuk menjalani tes hemoglobin (Hb) elektroforesis, yaitu pemeriksaan khusus yang dapat memastikan apakah seseorang merupakan pembawa sifat Thalasemia (carrier).
                     </p>
                 </div>
                 
                 <div class="info-card text-center" data-aos="flip-up" data-aos-delay="900">
-                    <i class="fas fa-percent section-icon text-3xl mb-4"></i>
+                    <i class="fas fa-percent section-icon text-4xl mb-3"></i>
                     <h4 class="text-xl">Hitungan Risiko</h4>
-                    <p class="text-[var(--text-light)] text-base">
-                        Jika kedua pasangan membawa sifat (Minor), risiko anak mewarisi Mayor adalah 25%. Konseling genetik membantu memahami pilihan reproduksi non-risiko.
+                    <p class="text-[var(--text-light)] text-sm md:text-base">
+                       Jika kedua pasangan membawa sifat Thalasemia (Minor), maka ada risiko 25% anak terlahir dengan Thalasemia Mayor. Karena itu, konseling genetik penting untuk membantu pasangan memahami pilihan reproduksi yang aman
                     </p>
                 </div>
                 
                 <div class="info-card text-center" data-aos="flip-up" data-aos-delay="1100">
-                    <i class="fas fa-comments section-icon text-3xl mb-4"></i>
+                    <i class="fas fa-comments section-icon text-4xl mb-3"></i>
                     <h4 class="text-xl">Konseling Genetik</h4>
-                    <p class="text-[var(--text-light)] text-base">
-                        Konsultasi dengan spesialis genetik atau hematolog penting untuk interpretasi hasil tes dan perencanaan keluarga yang aman dan terinformasi.
+                    <p class="text-[var(--text-light)] text-sm md:text-base">
+                        Konsultasi dengan dokter spesialis genetik atau hematologi sangat penting untuk memahami hasil tes, serta membantu pasangan dalam merencanakan keluarga secara aman, tepat, dan berdasarkan informasi yang jelas.
                     </p>
                 </div>
             </div>
@@ -277,43 +344,72 @@
             <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
                 Diagnosis Dini
             </h2>
-            <h3 class="text-4xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
+            <h3 class="text-3xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
                 Tanda-Tanda Klinis dan Prosedur Diagnostik
             </h3>
             <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
 
-            <div class="grid md:grid-cols-2 gap-16 mt-16 items-start">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 mt-10 md:mt-16 items-start">
                 
-                <div class="text-left" data-aos="fade-right" data-aos-delay="700">
-                    <h4 class="font-bold text-2xl section-heading mb-4 text-[var(--accent-pink)]">
-                        Gejala Kunci pada Bayi/Balita (6 Bulan ke Atas)
+                <div class="text-left bg-[var(--accent-bg)] p-6 rounded-lg shadow-inner" data-aos="fade-right" data-aos-delay="700">
+                    <h4 class="font-bold text-xl md:text-2xl section-heading mb-4 text-[var(--accent-pink)]">
+                        <i class="fas fa-exclamation-triangle mr-2"></i> Gejala pada Bayi atau Balita 6 Bulan ke Atas
                     </h4>
-                    <ul class="list-disc list-inside text-lg text-[var(--text-light)] space-y-4 ml-4 bg-[var(--accent-light)] p-6 rounded-md shadow-sm">
-                        <li>
-                            <strong class="text-[var(--text-dark)]">Anemia Persisten:</strong> Pucat yang terus-menerus dan tidak membaik dengan suplemen zat besi.
-                        </li>
-                        <li>
-                            <strong class="text-[var(--text-dark)]">Hepatomegali & Splenomegali:</strong> Pembesaran hati dan limpa, sering ditandai dengan perut buncit.
-                        </li>
-                        <li>
-                            <strong class="text-[var(--text-dark)]">Gagal Tumbuh:</strong> Pertumbuhan lambat, berat badan sulit naik, dan kelelahan ekstrem.
-                        </li>
-                        <li>
-                            <strong class="text-[var(--text-dark)]">Perubahan Wajah:</strong> Struktur tulang wajah yang tidak biasa (Tonjolan dahi atau tulang pipi) seiring waktu.
-                        </li>
-                    </ul>
+                    
+                    <div class="space-y-4">
+                        <div class="pro-list-item">
+                            <i class="fas fa-face-grimace pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Anemia Persisten:</strong> 
+                                <p>Anemia persisten (menetap): Kulit tampak pucat terus-menerus dan tidak membaik meskipun sudah minum suplemen zat besi.</p>
+                            </div>
+                        </div>
+                        <div class="pro-list-item">
+                            <i class="fas fa-expand-arrows-alt pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Hepatomegali & Splenomegali:</strong> 
+                                <p>Pembesaran hati dan limpa, sering ditandai dengan perut buncit</p>
+                            </div>
+                        </div>
+                        <div class="pro-list-item">
+                            <i class="fas fa-chart-line-down pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Pertumbuhan Terhambat:</strong> 
+                                <p>Anak tumbuh lebih lambat, berat badan sulit naik, dan sering merasa sangat lelah.</p>
+                            </div>
+                        </div>
+                        <div class="pro-list-item">
+                            <i class="fas fa-head-side-mask pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Perubahan Bentuk Wajah:</strong> 
+                                <p> Seiring waktu, tulang wajah bisa tampak menonjol, seperti dahi atau tulang pipi yang lebih menonjol dari biasanya.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="text-left" data-aos="fade-left" data-aos-delay="700">
-                    <h4 class="font-bold text-2xl section-heading mb-4 text-[var(--accent-pink)]">
-                        Langkah Konfirmasi Medis
+                    <h4 class="font-bold text-xl md:text-2xl section-heading mb-4 text-[var(--accent-pink)]">
+                        <i class="fas fa-flask mr-2"></i> Pemeriksaan Medis
                     </h4>
-                    <div class="info-card mt-4 p-5">
-                        <p class="text-lg font-semibold flex items-center mb-2"><i class="fas fa-check-circle text-green-500 mr-2"></i> 1. Pemeriksaan Darah Lengkap</p>
-                        <p class="text-sm text-[var(--text-light)]">Mengidentifikasi anemia mikrositik (ukuran sel darah merah kecil).</p>
-                        <hr class="my-3 border-[var(--accent-pink)]/30">
-                        <p class="text-lg font-semibold flex items-center mb-2"><i class="fas fa-check-circle text-green-500 mr-2"></i> 2. Analisis Hemoglobin</p>
-                        <p class="text-sm text-[var(--text-light)]">Tes spesifik (HPLC/Elektroforesis) untuk mengukur rasio hemoglobin abnormal. Ini adalah standar emas diagnosis.</p>
+                    <div class="info-card mt-4 p-5 md:p-8">
+                         <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="text-2xl font-bold text-white bg-[var(--accent-pink)] rounded-full h-8 w-8 flex items-center justify-center mr-3 flex-shrink-0 shadow-md">1</span>
+                                <div>
+                                    <p class="text-lg font-semibold text-[var(--text-dark)]">Pemeriksaan Darah Lengkap (CBC)</p>
+                                    <p class="text-sm text-[var(--text-light)]">Tes awal yang menunjukkan anemia mikrositik (ukuran sel darah merah kecil) dan hipokromik.</p>
+                                </div>
+                            </div>
+                            <hr class="border-[var(--accent-light)]">
+                            <div class="flex items-start">
+                                <span class="text-2xl font-bold text-white bg-[var(--accent-pink)] rounded-full h-8 w-8 flex items-center justify-center mr-3 flex-shrink-0 shadow-md">2</span>
+                                <div>
+                                    <p class="text-lg font-semibold text-[var(--text-dark)]">Analisis Hemoglobin (HPLC/Elektroforesis)</p>
+                                    <p class="text-sm text-[var(--text-light)]">Tes definitif (standar emas diagnosis) untuk mengukur jenis dan rasio hemoglobin abnormal (HbF, HbA2).</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -325,39 +421,51 @@
             <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
                 Fondasi Perawatan
             </h2>
-            <h3 class="text-4xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
+            <h3 class="text-3xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
                 Manajemen Medis: Transfusi dan Kelasi Besi
             </h3>
             <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
 
-            <div class="grid md:grid-cols-2 gap-12 mt-16 items-start">
-                <div class="info-card text-left" data-aos="fade-right" data-aos-delay="500">
-                    <i class="fas fa-hand-holding-medical section-icon text-3xl mb-3"></i>
-                    <h3 class="font-bold text-2xl section-heading mb-4">Transfusi Darah Teratur</h3>
-                    <p class="text-[var(--text-light)] mb-4">
-                        Tujuan utama adalah menjaga kadar hemoglobin anak di atas batas aman (biasanya >9.5 g/dL) untuk:
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 mt-10 md:mt-16 items-start">
+                <div class="info-card text-left p-6 md:p-8" data-aos="fade-right" data-aos-delay="500">
+                    <i class="fas fa-hand-holding-medical section-icon text-4xl mb-3"></i>
+                    <h3 class="font-bold text-xl md:text-2xl section-heading mb-4">Transfusi Darah Teratur</h3>
+                    <p class="text-[var(--text-light)] text-sm md:text-base mb-4">
+                       Tujuan utama dari transfusi darah rutin adalah untuk menjaga kadar hemoglobin anak tetap di atas batas aman (biasanya lebih dari 9,5 g/dL). Hal ini dilakukan agar:
+Pertumbuhan dan perkembangan anak tetap optimal.
+Mencegah terjadinya perubahan bentuk tulang (deformitas).
+Mengurangi pembengkakan pada limpa.
                     </p>
-                    <ul class="list-disc list-inside text-lg text-[var(--text-dark)] font-medium ml-4">
-                        <li>Mendukung pertumbuhan dan perkembangan.</li>
-                        <li>Mencegah komplikasi tulang (deformitas).</li>
-                        <li>Mengurangi ukuran limpa yang membengkak.</li>
-                    </ul>
+                    
+                    <div class="space-y-3">
+                        <div class="treatment-point">
+                            <div class="treatment-point-header"><i class="fas fa-sun mr-2 text-green-500"></i> Kualitas Hidup</div>
+                            <p class="text-sm text-[var(--text-light)]">Mendukung pertumbuhan optimal, energi, dan perkembangan kognitif.</p>
+                        </div>
+                        <div class="treatment-point">
+                            <div class="treatment-point-header"><i class="fas fa-shield-virus mr-2 text-green-500"></i> Mencegah Komplikasi</div>
+                            <p class="text-sm text-[var(--text-light)]">Menekan produksi darah yang tidak efektif, mencegah deformitas tulang, dan pembesaran limpa.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="info-card text-left" data-aos="fade-left" data-aos-delay="500">
-                    <i class="fas fa-pills section-icon text-3xl mb-3"></i>
-                    <h3 class="font-bold text-2xl section-heading mb-4">Terapi Kelasi Besi</h3>
-                    <p class="text-[var(--text-light)] mb-4">
-                        Kelasi Besi adalah perawatan paling penting kedua. Transfusi berulang menyebabkan penumpukan zat besi yang merusak:
+                <div class="info-card text-left p-6 md:p-8" data-aos="fade-left" data-aos-delay="500">
+                    <i class="fas fa-pills section-icon text-4xl mb-3"></i>
+                    <h3 class="font-bold text-xl md:text-2xl section-heading mb-4">Terapi Kelasi Besi (Chelation)</h3>
+                    <p class="text-[var(--text-light)] text-sm md:text-base mb-4">
+                        Kelasi Besi adalah fondasi perawatan kedua yang menghilangkan kelebihan zat besi dari transfusi, yang jika dibiarkan akan merusak organ:
                     </p>
-                    <ul class="list-disc list-inside text-lg text-[var(--text-dark)] font-medium ml-4">
-                        <li>Jantung (risiko gagal jantung).</li>
-                        <li>Hati (risiko sirosis).</li>
-                        <li>Kelenjar Endokrin.</li>
-                    </ul>
-                    <p class="text-sm mt-3 text-[var(--accent-pink)] font-semibold">
-                        Kepatuhan Kelasi Besi menentukan prognosis jangka panjang.
-                    </p>
+                    
+                    <div class="space-y-3">
+                        <div class="treatment-point">
+                            <div class="treatment-point-header"><i class="fas fa-skull-crossbones mr-2 text-red-500"></i> Bahaya Utama: Jantung</div>
+                            <p class="text-sm text-[var(--text-light)]">Zat besi menumpuk di miokardium, menyebabkan gagal jantung, yang merupakan risiko utama.</p>
+                        </div>
+                        <div class="treatment-point">
+                            <div class="treatment-point-header"><i class="fas fa-capsules mr-2 text-red-500"></i> Kepatuhan Adalah Kunci</div>
+                            <p class="text-sm text-[var(--text-light)]">Kepatuhan ketat pada obat kelasi besi (oral atau suntikan) adalah penentu utama harapan hidup jangka panjang.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -368,29 +476,54 @@
             <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
                 Peran Pahlawan
             </h2>
-            <h3 class="text-4xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
+            <h3 class="text-3xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
                 Membangun Kualitas Hidup yang Positif
             </h3>
             <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
 
-            <div class="grid md:grid-cols-2 gap-16 mt-16 items-center">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 mt-10 md:mt-16 items-center">
+                
                 <div class="flex justify-center order-1 md:order-1" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="image-placeholder max-w-lg shadow-xl" style="padding-top: 75%;">
+                    <div class="image-placeholder max-w-xs md:max-w-lg shadow-xl" style="padding-top: 100%;">
                         <i class="fas fa-people-carry-box image-placeholder-icon"></i>
-                        <p class="absolute text-2xl font-semibold z-10 text-[var(--text-dark)]/90 mt-20">Dukungan Komunitas</p>
+                        <p class="absolute text-xl md:text-2xl font-semibold z-10 text-[var(--text-dark)]/90 mt-20">Dukungan Komunitas</p>
                     </div>
                 </div>
 
-                <div class="text-left order-2 md:order-2" data-aos="fade-left" data-aos-delay="700">
-                    <h4 class="font-bold text-2xl section-heading mb-4 text-[var(--accent-pink)]">
-                        Kunci Sukses Jangka Panjang
+                <div class="text-left order-2 md:order-2 bg-[var(--accent-bg)] p-6 rounded-lg shadow-inner" data-aos="fade-left" data-aos-delay="700">
+                    <h4 class="font-bold text-xl md:text-2xl section-heading mb-4 text-[var(--accent-pink)]">
+                        <i class="fas fa-handshake-angle mr-2"></i> Kunci Sukses Jangka Panjang
                     </h4>
-                    <ul class="list-disc list-inside text-lg text-[var(--text-light)] space-y-3 ml-4">
-                        <li>**Nutrisi Terpandu:** Hindari makanan/suplemen yang kaya zat besi. Fokus pada kalsium, vitamin D, dan asam folat.</li>
-                        <li>**Dukungan Psikososial:** Thalasemia adalah perjalanan emosional. Anak dan keluarga memerlukan konseling untuk mengelola kecemasan dan depresi.</li>
-                        <li>**Sekolah dan Sosial:** Pastikan lingkungan sekolah memahami kebutuhan anak (istirahat, jadwal medis) agar anak tetap merasa normal dan inklusif.</li>
-                        <li>**Kolaborasi Tim Medis:** Bekerja erat dengan Hematolog, Kardiolog, dan Endokrinolog (tim multidisiplin) adalah standar perawatan modern.</li>
-                    </ul>
+                    <div class="divide-y divide-[var(--accent-light)]">
+                        <div class="pro-list-item">
+                            <i class="fas fa-seedling pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Nutrisi Terpandu:</strong> 
+                                <p>Fokus pada diet seimbang. Penting: Hindari makanan yang difortifikasi zat besi dan konsultasi suplemen (Kalsium, Vitamin D, Asam Folat).</p>
+                            </div>
+                        </div>
+                        <div class="pro-list-item">
+                            <i class="fas fa-users-viewfinder pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Dukungan Psikososial:</strong> 
+                                <p>Bantu anak mengelola kondisi kronis. Libatkan konseling untuk mengatasi kecemasan, depresi, dan penerimaan diri (self-esteem).</p>
+                            </div>
+                        </div>
+                        <div class="pro-list-item">
+                            <i class="fas fa-graduation-cap pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Sekolah dan Inklusi:</strong> 
+                                <p>Komunikasikan kebutuhan anak kepada pihak sekolah (izin istirahat, jadwal medis) agar anak tetap merasa normal dan inklusif.</p>
+                            </div>
+                        </div>
+                        <div class="pro-list-item">
+                            <i class="fas fa-sitemap pro-list-icon"></i>
+                            <div class="pro-list-text">
+                                <strong class="block">Kolaborasi Multidisiplin:</strong> 
+                                <p>Rawat anak di bawah tim medis lengkap: Hematolog, Kardiolog, Endokrinolog. Ini adalah standar perawatan modern.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -404,16 +537,16 @@
                 PENUTUP
             </h2>
             
-            <p class="text-4xl font-extrabold page-title italic mb-8 leading-tight" data-aos="fade-up" data-aos-delay="400" style="color: white;">
+            <p class="text-3xl md:text-4xl font-extrabold page-title italic mb-8 leading-tight" data-aos="fade-up" data-aos-delay="400" style="color: white;">
                 "Lakukan yang terbaik. Sisanya, serahkan pada ilmu pengetahuan dan doa."
             </p>
 
-            <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="600">
-                Peran Anda sebagai orang tua sangat besar. Dengan kepatuhan pada protokol medis dan dukungan penuh kasih, anak Anda akan berkembang menjadi individu yang tangguh.
+            <p class="text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="600">
+                Peran Anda sebagai orang tua adalah penentu utama. Dengan kepatuhan pada protokol medis dan dukungan penuh kasih, anak Anda akan berkembang menjadi individu yang tangguh dan sehat.
             </p>
 
-            <div class="mt-12" data-aos="zoom-in" data-aos-delay="800">
-                <a href="#intro" class="inline-block px-12 py-3 bg-white text-[var(--accent-pink)] text-sm uppercase tracking-[0.1em] font-extrabold rounded-md transition transform shadow-md hover:bg-gray-100">
+            <div class="mt-10 md:mt-12" data-aos="zoom-in" data-aos-delay="800">
+                <a href="#intro" class="inline-block px-8 md:px-12 py-3 bg-white text-[var(--accent-pink)] text-sm uppercase tracking-[0.1em] font-extrabold rounded-full transition transform shadow-lg hover:bg-gray-100">
                     <i class="fas fa-arrow-up mr-3"></i> Kembali ke Atas
                 </a>
             </div>
