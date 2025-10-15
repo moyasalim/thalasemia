@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
+    <body class="font-sans text-accent-dark overflow-x-hidden">
+  <audio id="custom-audio-player" autoplay loop controls>
+  <source src="orangtua.mp3" type="audio/mp3">
+  Browser Anda tidak mendukung elemen audio.
+</audio>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pusat Informasi Medis: Thalasemia dan Peran Orang Tua</title>
@@ -12,9 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&family=Cormorant+Garamond:ital,wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        
         /* =========================================
             ✨ SKEMA WARNA ULTRA PREMIUM (White & Pink Aksen) ✨
             ========================================= */
+            
         :root {
             /* Warna Dasar: Putih Bersih & Hitam Pekat */
             --bg-primary: #ffffff; 
@@ -107,19 +114,20 @@
 
         /* --- Key Highlight Box (Fokus Profesional) --- */
         .key-highlight-box {
-            background-color: var(--accent-light); 
-            border-radius: 0.75rem; 
-            padding: 2rem 1.5rem; /* Lebih kecil untuk mobile */
-            margin: 2rem 0;
-            border: 2px solid var(--accent-pink);
-            box-shadow: var(--shadow-card);
-        }
-        .key-highlight-box p {
-            font-size: 1.1rem; /* Dikecilkan untuk mobile */
-            line-height: 1.6;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+    background-color: var(--accent-light); 
+    border-radius: 0.75rem; 
+    padding: 2rem 1.5rem; /* Lebih kecil untuk mobile */
+    margin: 2rem 0;
+    border: 2px solid var(--accent-pink);
+    box-shadow: var(--shadow-card);
+}
+.key-highlight-box p {
+    font-size: 1.1rem; 
+    line-height: 1.6;
+    font-weight: 600;
+    color: var(--text-dark);
+    /* HAPUS ATAU LENGKAPI baris 'text' yang bermasalah di sini */
+}
         @media (min-width: 768px) {
              .key-highlight-box p {
                 font-size: 1.4rem;
@@ -224,6 +232,29 @@
             align-items: center;
             margin-bottom: 0.5rem;
         }
+          #custom-audio-player {
+    /* 1. Atur Ukuran & Posisi (Tetap) */
+    width: 280px; 
+    height: 45px; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    
+    /* 2. Atur Desain Soft & Sangat Transparan */
+    /* Transparansi ditingkatkan menjadi 0.5 (50% transparan) */
+    background-color: rgba(255, 245, 248, 0.5); /* Pink sangat pucat/putih transparan */
+    border: 1px solid rgba(255, 204, 229, 0.7); /* Border tipis, pink pucat semi-transparan */
+    border-radius: 25px; 
+    padding: 5px 15px; 
+    color: #c2185b; 
+    
+    /* 3. Efek Glow pada Border menggunakan Box Shadow */
+    /* Shadow dengan penyebaran yang lebih luas dan warna pink pucat (efek glow) */
+    box-shadow: 
+        0 0 15px rgba(255, 192, 203, 0.8), /* Inner glow: Lebih kuat, warna pink muda */
+        0 0 5px rgba(255, 255, 255, 0.6);  /* Outer glow: Putih, untuk kesan menyala */
+  }
 
     </style>
 </head>
@@ -263,36 +294,35 @@
 
 
     <section id="intro" class="main-section pt-32 md:pt-40 pb-10 md:pb-20">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10 md:gap-20">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10 md:gap-20">
+        
+        <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1200">
+            <img src="orangtua.png" 
+                 alt="Ilustrasi mengelola Thalasemia" 
+                 class="w-full max-w-xs md:max-w-lg h-auto object-cover rounded-xl shadow-xl border border-gray-100 transition duration-500 ease-in-out transform hover:scale-[1.02]"
+            />
+            </div>
+        
+        <div class="flex-1 text-center md:text-left order-2 md:order-1">
+            <p class="text-xs md:text-sm font-semibold text-[var(--accent-pink)] uppercase tracking-[0.2em] mb-4" data-aos="fade-up" data-aos-delay="300">
+                PUSAT SUMBER DAYA MEDIS & KELUARGA
+            </p>
+            <h1 class="text-5xl lg:text-7xl page-title leading-tight"
+                data-aos="fade-right" data-aos-duration="1500">
+                Mengelola <span class="italic text-[var(--accent-pink)]">Thalasemia</span> dengan Pengetahuan
+            </h1>
+            <p class="mt-6 md:mt-8 text-base md:text-xl text-[var(--text-light)] font-light tracking-wide max-w-xl" data-aos="fade-up" data-aos-delay="500">
+                Kami menyediakan panduan untuk orang tua dalam pencegahan, diagnosis, dan pemeliharaan kualitas hidup anak Thalasemia.
+            </p>
             
-            <div class="flex-1 text-center md:text-left order-2 md:order-1">
-                <p class="text-xs md:text-sm font-semibold text-[var(--accent-pink)] uppercase tracking-[0.2em] mb-4" data-aos="fade-up" data-aos-delay="300">
-                    PUSAT SUMBER DAYA MEDIS & KELUARGA
-                </p>
-                <h1 class="text-5xl lg:text-7xl page-title leading-tight"
-                    data-aos="fade-right" data-aos-duration="1500">
-                    Mengelola <span class="italic text-[var(--accent-pink)]">Thalasemia</span> dengan Pengetahuan
-                </h1>
-                <p class="mt-6 md:mt-8 text-base md:text-xl text-[var(--text-light)] font-light tracking-wide max-w-xl" data-aos="fade-up" data-aos-delay="500">
-                    Kami menyediakan panduan profesional yang komprehensif bagi orang tua dalam pencegahan, diagnosis, dan pemeliharaan kualitas hidup anak penyandang Thalasemia.
-                </p>
-                
-                <a href="#section1" 
-                    class="inline-block px-8 md:px-12 py-3 mt-8 md:mt-10 btn-primary text-sm uppercase tracking-[0.1em] rounded-md transition transform"
-                    data-aos="fade-up" data-aos-delay="900">
-                    Jelajahi Peta Jalan Edukasi <i class="fas fa-arrow-down ml-3"></i>
-                </a>
-            </div>
-
-            <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1200">
-                <div class="image-placeholder max-w-xs md:max-w-lg shadow-xl" style="padding-top: 100%;">
-                    <i class="fas fa-dna image-placeholder-icon"></i>
-                    <p class="absolute text-xl md:text-2xl font-semibold z-10 text-[var(--text-dark)]/90 mt-20">Skrining Genetik</p>
-                </div>
-            </div>
+            <a href="#section1" 
+                class="inline-block px-8 md:px-12 py-3 mt-8 md:mt-10 btn-primary text-sm uppercase tracking-[0.1em] rounded-md transition transform"
+                data-aos="fade-up" data-aos-delay="900">
+                Jelajahi Peta Jalan Edukasi <i class="fas fa-arrow-down ml-3"></i>
+            </a>
         </div>
-    </section>
-
+    </div>
+</section>
     <section id="section1" class="main-section bg-[var(--accent-bg)] shadow-inner">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
@@ -303,7 +333,7 @@
             </h3>
             <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
 
-            <div class="key-highlight-box max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-delay="600">
+            <div class="key-highlight-box max-w-6xl mx-auto text-center" data-aos="fade-up" data-aos-delay="600">
                 <p>
                     <i class="fas fa-user-shield text-[var(--accent-pink)] mr-3"></i> 
                     <span class="font-bold">Fokus utama dalam pencegahan Thalasemia Mayor adalah melakukan pemeriksaan atau skrining pada pasangan sebelum menikah,</span> untuk mengetahui apakah salah satu atau keduanya membawa sifat Thalasemia (Thalasemia Minor).
@@ -353,35 +383,35 @@
                 
                 <div class="text-left bg-[var(--accent-bg)] p-6 rounded-lg shadow-inner" data-aos="fade-right" data-aos-delay="700">
                     <h4 class="font-bold text-xl md:text-2xl section-heading mb-4 text-[var(--accent-pink)]">
-                        <i class="fas fa-exclamation-triangle mr-2"></i> Gejala pada Bayi atau Balita 6 Bulan ke Atas
+                        <i class="fas fa-exclamation-triangle mr-2"></i> Gejala Thalasemia
                     </h4>
                     
                     <div class="space-y-4">
                         <div class="pro-list-item">
                             <i class="fas fa-face-grimace pro-list-icon"></i>
                             <div class="pro-list-text">
-                                <strong class="block">Anemia Persisten:</strong> 
-                                <p>Anemia persisten (menetap): Kulit tampak pucat terus-menerus dan tidak membaik meskipun sudah minum suplemen zat besi.</p>
+                                <strong class="block">Anemia Persisten</strong> 
+                                <p>Kulit tampak pucat terus-menerus dan tidak membaik meskipun sudah minum suplemen zat besi.</p>
                             </div>
                         </div>
                         <div class="pro-list-item">
                             <i class="fas fa-expand-arrows-alt pro-list-icon"></i>
                             <div class="pro-list-text">
-                                <strong class="block">Hepatomegali & Splenomegali:</strong> 
+                                <strong class="block">Hepatomegali & Splenomegali</strong> 
                                 <p>Pembesaran hati dan limpa, sering ditandai dengan perut buncit</p>
                             </div>
                         </div>
                         <div class="pro-list-item">
                             <i class="fas fa-chart-line-down pro-list-icon"></i>
                             <div class="pro-list-text">
-                                <strong class="block">Pertumbuhan Terhambat:</strong> 
+                                <strong class="block">Pertumbuhan Terhambat</strong> 
                                 <p>Anak tumbuh lebih lambat, berat badan sulit naik, dan sering merasa sangat lelah.</p>
                             </div>
                         </div>
                         <div class="pro-list-item">
                             <i class="fas fa-head-side-mask pro-list-icon"></i>
                             <div class="pro-list-text">
-                                <strong class="block">Perubahan Bentuk Wajah:</strong> 
+                                <strong class="block">Perubahan Bentuk Wajah</strong> 
                                 <p> Seiring waktu, tulang wajah bisa tampak menonjol, seperti dahi atau tulang pipi yang lebih menonjol dari biasanya.</p>
                             </div>
                         </div>
@@ -429,12 +459,9 @@
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 mt-10 md:mt-16 items-start">
                 <div class="info-card text-left p-6 md:p-8" data-aos="fade-right" data-aos-delay="500">
                     <i class="fas fa-hand-holding-medical section-icon text-4xl mb-3"></i>
-                    <h3 class="font-bold text-xl md:text-2xl section-heading mb-4">Transfusi Darah Teratur</h3>
+                    <h3 class="font-bold text-xl md:text-2xl section-heading mb-4">Transfusi Darah </h3>
                     <p class="text-[var(--text-light)] text-sm md:text-base mb-4">
-                       Tujuan utama dari transfusi darah rutin adalah untuk menjaga kadar hemoglobin anak tetap di atas batas aman (biasanya lebih dari 9,5 g/dL). Hal ini dilakukan agar:
-Pertumbuhan dan perkembangan anak tetap optimal.
-Mencegah terjadinya perubahan bentuk tulang (deformitas).
-Mengurangi pembengkakan pada limpa.
+                       Tujuan utama dari transfusi darah rutin adalah untuk menjaga kadar hemoglobin anak tetap di atas batas aman (12.0-14.0 g/dL). Hal ini dilakukan agar:
                     </p>
                     
                     <div class="space-y-3">
@@ -451,15 +478,15 @@ Mengurangi pembengkakan pada limpa.
                 
                 <div class="info-card text-left p-6 md:p-8" data-aos="fade-left" data-aos-delay="500">
                     <i class="fas fa-pills section-icon text-4xl mb-3"></i>
-                    <h3 class="font-bold text-xl md:text-2xl section-heading mb-4">Terapi Kelasi Besi (Chelation)</h3>
+                    <h3 class="font-bold text-xl md:text-2xl section-heading mb-4">Terapi Kelasi Besi</h3>
                     <p class="text-[var(--text-light)] text-sm md:text-base mb-4">
-                        Kelasi Besi adalah fondasi perawatan kedua yang menghilangkan kelebihan zat besi dari transfusi, yang jika dibiarkan akan merusak organ:
+                       Terapi ini berfungsi mengeluarkan kelebihan zat besi akibat transfusi darah berulang, karena penumpukan zat besi dapat merusak organ penting seperti jantung, hati, dan kelenjar hormon. 
                     </p>
                     
                     <div class="space-y-3">
                         <div class="treatment-point">
                             <div class="treatment-point-header"><i class="fas fa-skull-crossbones mr-2 text-red-500"></i> Bahaya Utama: Jantung</div>
-                            <p class="text-sm text-[var(--text-light)]">Zat besi menumpuk di miokardium, menyebabkan gagal jantung, yang merupakan risiko utama.</p>
+                            <p class="text-sm text-[var(--text-light)]">Zat besi menumpuk di miokardium, menyebabkan gagal jantung</p>
                         </div>
                         <div class="treatment-point">
                             <div class="treatment-point-header"><i class="fas fa-capsules mr-2 text-red-500"></i> Kepatuhan Adalah Kunci</div>
@@ -472,77 +499,72 @@ Mengurangi pembengkakan pada limpa.
     </section>
 
     <section id="section4" class="main-section">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
-                Peran Pahlawan
-            </h2>
-            <h3 class="text-3xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
-                Membangun Kualitas Hidup yang Positif
-            </h3>
-            <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-sm font-medium tracking-[0.2em] uppercase text-[var(--accent-pink)] mb-2" data-aos="fade-down" data-aos-duration="800">
+            Peran Keluarga
+        </h2>
+        <h3 class="text-3xl md:text-5xl section-heading mb-4" data-aos="fade-down" data-aos-delay="200">
+            Membangun Kualitas Hidup yang Positif
+        </h3>
+        <div class="separator" data-aos="fade-down" data-aos-delay="400"></div>
 
-            <div class="grid md:grid-cols-2 gap-8 md:gap-16 mt-10 md:mt-16 items-center">
-                
-                <div class="flex justify-center order-1 md:order-1" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="image-placeholder max-w-xs md:max-w-lg shadow-xl" style="padding-top: 100%;">
-                        <i class="fas fa-people-carry-box image-placeholder-icon"></i>
-                        <p class="absolute text-xl md:text-2xl font-semibold z-10 text-[var(--text-dark)]/90 mt-20">Dukungan Komunitas</p>
-                    </div>
+        <div class="grid md:grid-cols-2 gap-8 md:gap-16 mt-10 md:mt-16 items-center">
+            
+            <div class="flex justify-center order-1 md:order-1" data-aos="zoom-in" data-aos-delay="500">
+                <img src="orangtua2.png" 
+                     alt="Ilustrasi Dukungan Komunitas dan Keluarga" 
+                     class="w-full max-w-xs md:max-w-lg h-auto object-cover rounded-xl shadow-xl border border-gray-100 transition duration-500 ease-in-out transform hover:scale-[1.02]"
+                />
                 </div>
 
-                <div class="text-left order-2 md:order-2 bg-[var(--accent-bg)] p-6 rounded-lg shadow-inner" data-aos="fade-left" data-aos-delay="700">
-                    <h4 class="font-bold text-xl md:text-2xl section-heading mb-4 text-[var(--accent-pink)]">
-                        <i class="fas fa-handshake-angle mr-2"></i> Kunci Sukses Jangka Panjang
-                    </h4>
-                    <div class="divide-y divide-[var(--accent-light)]">
-                        <div class="pro-list-item">
-                            <i class="fas fa-seedling pro-list-icon"></i>
-                            <div class="pro-list-text">
-                                <strong class="block">Nutrisi Terpandu:</strong> 
-                                <p>Fokus pada diet seimbang. Penting: Hindari makanan yang difortifikasi zat besi dan konsultasi suplemen (Kalsium, Vitamin D, Asam Folat).</p>
-                            </div>
+            <div class="text-left order-2 md:order-2 bg-[var(--accent-bg)] p-6 rounded-lg shadow-inner" data-aos="fade-left" data-aos-delay="700">
+                <h4 class="font-bold text-xl md:text-2xl section-heading mb-4 text-[var(--accent-pink)]">
+                    <i class="fas fa-handshake-angle mr-2"></i> Kunci Sukses Jangka Panjang
+                </h4>
+                <div class="divide-y divide-[var(--accent-light)]">
+                    <div class="pro-list-item">
+                        <i class="fas fa-seedling pro-list-icon"></i>
+                        <div class="pro-list-text">
+                            <strong class="block">Nutrisi Tempat</strong> 
+                            <p>Berikan anak pola makan seimbang, hindari makanan yang mengandung tambahan zat besi, dan konsultasikan penggunaan suplemen seperti kalsium, vitamin D, dan asam folat sesuai anjuran dokter.</p>
                         </div>
-                        <div class="pro-list-item">
-                            <i class="fas fa-users-viewfinder pro-list-icon"></i>
-                            <div class="pro-list-text">
-                                <strong class="block">Dukungan Psikososial:</strong> 
-                                <p>Bantu anak mengelola kondisi kronis. Libatkan konseling untuk mengatasi kecemasan, depresi, dan penerimaan diri (self-esteem).</p>
-                            </div>
+                    </div>
+                    <div class="pro-list-item">
+                        <i class="fas fa-users-viewfinder pro-list-icon"></i>
+                        <div class="pro-list-text">
+                            <strong class="block">Dukungan Psikososial</strong> 
+                            <p>Bantu anak menghadapi kondisi kronisnya dengan tenang. Konseling dapat membantu mengelola kecemasan, stres, dan meningkatkan kepercayaan diri..</p>
                         </div>
-                        <div class="pro-list-item">
-                            <i class="fas fa-graduation-cap pro-list-icon"></i>
-                            <div class="pro-list-text">
-                                <strong class="block">Sekolah dan Inklusi:</strong> 
-                                <p>Komunikasikan kebutuhan anak kepada pihak sekolah (izin istirahat, jadwal medis) agar anak tetap merasa normal dan inklusif.</p>
-                            </div>
+                    </div>
+                    <div class="pro-list-item">
+                        <i class="fas fa-graduation-cap pro-list-icon"></i>
+                        <div class="pro-list-text">
+                            <strong class="block">Sekolah dan Inklusi</strong> 
+                            <p>Sampaikan kepada pihak sekolah tentang kebutuhan khusus anak, seperti waktu istirahat tambahan atau jadwal medis, agar anak tetap merasa diterima dan dapat beraktivitas dengan nyaman.</p>
                         </div>
-                        <div class="pro-list-item">
-                            <i class="fas fa-sitemap pro-list-icon"></i>
-                            <div class="pro-list-text">
-                                <strong class="block">Kolaborasi Multidisiplin:</strong> 
-                                <p>Rawat anak di bawah tim medis lengkap: Hematolog, Kardiolog, Endokrinolog. Ini adalah standar perawatan modern.</p>
-                            </div>
+                    </div>
+                    <div class="pro-list-item">
+                        <i class="fas fa-sitemap pro-list-icon"></i>
+                        <div class="pro-list-text">
+                            <strong class="block">Kolaborasi Tim Medis</strong> 
+                            <p>Pastikan anak dirawat oleh tim medis multidisiplin yang terdiri dari dokter hematologi, kardiologi, dan endokrinologi, sebagai bagian dari standar perawatan modern.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
 
     <section id="epilog" class="main-section conclusion-section text-center bg-[var(--accent-pink)] text-white">
         <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
-
-            <h2 class="text-sm font-medium tracking-[0.2em] uppercase mb-4" data-aos="fade-down" data-aos-delay="200">
-                PENUTUP
-            </h2>
             
             <p class="text-3xl md:text-4xl font-extrabold page-title italic mb-8 leading-tight" data-aos="fade-up" data-aos-delay="400" style="color: white;">
-                "Lakukan yang terbaik. Sisanya, serahkan pada ilmu pengetahuan dan doa."
+                "YOUR EXISTENCE MATTERS"
             </p>
 
             <p class="text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="600">
-                Peran Anda sebagai orang tua adalah penentu utama. Dengan kepatuhan pada protokol medis dan dukungan penuh kasih, anak Anda akan berkembang menjadi individu yang tangguh dan sehat.
+                Peran Anda sebagai orang tua adalah cahaya utama dalam perjalanan anak melawan thalasemia. Dengan kasih sayang yang tulus, kepatuhan pada perawatan medis, dan semangat yang tak pernah padam, Anda membantu anak tumbuh menjadi pribadi yang kuat, berani, dan penuh harapan. <br>Setiap langkah kecil Anda adalah bagian dari keajaiban besar dalam proses kesembuhannya.
             </p>
 
             <div class="mt-10 md:mt-12" data-aos="zoom-in" data-aos-delay="800">
@@ -555,7 +577,7 @@ Mengurangi pembengkakan pada limpa.
     
     <footer class="bg-white text-[var(--text-dark)] p-6 md:p-8 text-center border-t border-[var(--accent-light)]" >
         <p class="font-light text-sm md:text-base">
-            © 2025 Pusat Informasi Medis Thalasemia | Dirancang untuk Orang Tua | <span class="text-[var(--accent-pink)] font-semibold">#KuatDenganPengetahuan</span>
+            © Profesi Ners Poltekkes Kemenkes Jakarta III | Informasi Medis Thalasemia | Dirancang Untuk Oarng Tua<span class="text-[var(--accent-pink)] font-semibold"> #KuatDenganPengetahuan</span>
         </p>
     </footer>
 
